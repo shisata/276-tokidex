@@ -26,6 +26,18 @@ express()
     }
   })
 
+  .get('/data', (req, res) => {
+    var getUserQuery = `SELECT * FROM tokidex`;
+    console.log(getUserQuery);
+    pool.query(getUserQuery, (error, result) => {
+      if(error)
+        res.end(error);
+      var results = {'rows':result.rows};//////////////////////////////////////////////////////////
+      console.log(results);
+      
+    })
+  })
+
   .set('view engine', 'ejs')
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

@@ -5,13 +5,33 @@
     <title>Tokidex</title>
   </head>
   <body>
-    <div class="top-nav">
+    <script type="text/javascript" src="script.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <div id="top-nav">
       <h1>Tokidex</h1>
-      <div class="nav-button">
-        <button type="nav-butt" name="index">Index</button>
-        <button type="nav-butt" name="deceased">Deceased</button>
-      </div>
+      <ul name="nav-list">
+        <li><button type="nav-butt" name="index">Index</button></li>
+        <li><button type="nav-butt" name="deceased">Deceased</button></li>
+      </ul>
     </div>
-
+    <div id="display-box">
+      <table id="display-table">
+        <tr>
+          <td>
+            <div class="tokimon-box">
+              <img class="tokimon-pic" src="something.png" alt="P">
+              <p class="tokimon-index">#1</p>
+              <h3 class="tokimon-name">Pikachu</h3>
+              <ul class="element-list">
+                <li class="grass">Grass</li>
+                <li class="electric">Electric</li>
+                <li class="water">Water</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>

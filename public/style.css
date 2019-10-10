@@ -1,0 +1,65 @@
+ul{
+  list-style-type:none;
+}
+
+nav-list{
+  display:inline;
+}
+
+.tokimon-pic{
+  width: 200px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tokimon-pic{
+  background-color: grey;
+  color: white;
+  font-family: monospace, sans-serif;
+  font-size: 50px;
+}
+
+.tokimon-box:hover{
+  background-color: red;
+}
+
+.tokimon-index{
+  font-family: "Arial";
+  font-size: 20px;
+  color: #777777;
+}
+
+.tokimon-name{
+  font-family: cursive;
+  font-size: 27px;
+}
+
+/*Element*/
+.element-list{
+  float:left;
+}
+
+.grass, .electric, .fire, .water{
+  font-family:monospace;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.grass{
+  background-color: green;
+}
+
+.electric{
+  color: black;
+  background-color: yellow;
+}
+
+.fire{
+  background-color: red;
+}
+
+.water{
+  background-color: blue;
+}
