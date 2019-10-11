@@ -32,9 +32,9 @@ express()
     pool.query(getUserQuery, (error, result) => {
       if(error)
         res.end(error);
-      var results = {'rows':result.rows};//////////////////////////////////////////////////////////
+      var results = {'rows':result.rows};////////////////////////////////
       console.log(results);
-      
+
     })
   })
 
