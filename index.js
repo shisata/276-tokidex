@@ -16,7 +16,7 @@ express()
   .get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM tokidex');
+      const result = await client.query('SELECT * FROM test_table');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/db', results );
       client.release();
@@ -25,19 +25,6 @@ express()
       res.send("Error " + err);
     }
   })
-
-  .get('/users', (req,res) => {
-  var getUsersQuery = `SELECT * FROM tokidex`;
-  console.log(getUsersQuery);
-  pool.query(getUsersQuery, (error, result) => {
-    if (error)
-      res.end(error);
-    var results = {'rows': result.rows };
-    console.log(results);
-    res.render('pages/users', results)
-    });
-  });
-
 
   .get('/data', (req, res) => {
     var getUserQuery = `SELECT * FROM tokidex`;
