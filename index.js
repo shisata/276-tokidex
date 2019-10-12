@@ -16,7 +16,7 @@ app.get('/times', (req, res) => res.send(showTimes()))
 app.get('/db', async (req, res) => {
   try {
     const client = await pool.connect()
-    const result = await client.query('SELECT * FROM tokidex');
+    const result = await client.query('SELECT * FROM test_table');
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/db', results );
     client.release();
@@ -27,16 +27,17 @@ app.get('/db', async (req, res) => {
 })
 
 app.get('/users', (req,res) => {
-  var getUsersQuery = `SELECT * FROM tokidex`;
-  console.log(getUsersQuery);
-  pool.query(getUsersQuery, (error, result) => {
-    if (error)
-      res.end(error);
-    var results = {'rows': result.rows };
-    console.log(results);
-    res.render('pages/users', results)
-    });
+var getUsersQuery = `SELECT * FROM tokidex`;
+console.log(getUsersQuery);
+pool.query(getUsersQuery, (error, result) => {
+  if (error)
+    res.end(error);
+  var results = {'rows': result.rows };
+  console.log(results);
+  res.render('pages/users', results)
+  });
 });
+
 
 app.get('/data', (req, res) => {
   var getUserQuery = `SELECT * FROM tokidex`;
@@ -50,8 +51,8 @@ app.get('/data', (req, res) => {
   })
 })
 
-app.set('view engine', 'ejs')
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+.set('view engine', 'ejs')
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
 /*
