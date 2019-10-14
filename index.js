@@ -13,10 +13,7 @@ express()
   //.use(express.json());
   //.use(express.urlencoded({extended:false}));
   .set('views', path.join(__dirname, 'views'));
-  .get('/', (req, res) => {
-    res.sendfile('public/home.html');
-
-    })
+  .get('/', (req, res) => res.sendfile('public/home.html');
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
     try {
