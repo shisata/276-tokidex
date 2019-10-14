@@ -23,7 +23,7 @@ express()
       console.error(err);
       res.send("Error " + err);
     }
-  });
+  })
 
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
