@@ -12,14 +12,21 @@
     <div id="top-nav">
       <h1>Tokidex</h1>
       <ul name="nav-list">
-        <% results.forEach(function(r) { %>
-            <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
-        <% }); %>
         <li><button type="nav-butt" name="index">Index</button></li>
         <li><button type="nav-butt" name="deceased">Deceased</button></li>
       </ul>
     </div>
     <div id="display-box">
+      <ul>
+        <% results.forEach(function(r) { %>
+            <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
+        <% }); %>
+      </ul>
+      <form class="new-tokimon" action="index.html" method="post">
+        <input type="text" name="name" value="">
+        <input type="text" name="trainer" value="">
+        <input type="submit" name="Submit">
+      </form>
       <table id="display-table">
         <tr>
           <td>
