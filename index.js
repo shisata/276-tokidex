@@ -11,8 +11,9 @@ const pool = new Pool({
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
-  .get('/', (req, res) => {res.sendfile('public/home.html');
-      
+  .get('/', (req, res) => {
+    res.sendfile('public/home.html');
+
     })
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
