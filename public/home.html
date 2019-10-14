@@ -19,6 +19,11 @@
       <table id="display-table">
         <tr>
           <td>
+            <ul>
+              <% results.forEach(function(r) { %>
+                  <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
+              <% }); %>
+            </ul>
             <div class="tokimon-box">
               <img class="tokimon-pic" src="something.png" alt="P">
               <p class="tokimon-index">#1</p>

@@ -13,7 +13,18 @@ express()
   .use(express.json())
   .use(express.urlencoded({extended:false}))
   .set('views', path.join(__dirname, 'views'))
-  .get('/', (req, res) => res.sendfile('public/home.html'))
+  .get('/', (req, res) => {
+    try{
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM tokidex');
+      const results = {'results': (result) ? result.rows : null};
+      res.sendfile('public/home.html', results);
+    } catch(err){
+      console.error(err);
+      res.send("Error " + err);
+    }
+  });
+
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
     try {
