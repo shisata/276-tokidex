@@ -10,7 +10,9 @@ const pool = new Pool({
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
+  .use(express.json());
+  .use(express.urlencoded({extended:false}));
+  .set('views', path.join(__dirname, 'views'));
   .get('/', (req, res) => {
     res.sendfile('public/home.html');
 
