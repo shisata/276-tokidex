@@ -18,12 +18,11 @@
       <table id="display-table">
         <tr>
           <td>
-            <% var data = 100; %>
             <script>
-
-                var getTest = <%= data %>;
-                alert(getTest);
-                alertPage(getTest);
+                var data = [];
+                data = <% results %>;
+                console.log(data);
+                alertPage(data);
             </script>
             <ul>
               <% results.forEach(function(r) { %>
