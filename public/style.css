@@ -40,11 +40,11 @@ ul{
   float:left;
 }
 
-.grass, .electric, .fire, .water{
+.grass, .electric, .fire, .water, .fighting{
   font-family:monospace;
-  border-radius: 5px;
   padding: 5px;
-  color: white;
+  color: black;
+  background-color: grey;
 }
 
 .grass{
