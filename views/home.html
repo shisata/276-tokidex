@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tokidex</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="script.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <div id="top-nav">
+      <h1>Tokidex</h1>
+      <ul name="nav-list">
+        <li><button type="nav-butt" name="index">Index</button></li>
+        <li><button type="nav-butt" name="deceased">Deceased</button></li>
+      </ul>
+    </div>
+    <div id="display-box">
+      <table id="display-table">
+        <tr>
+          <td>
+            <ul>
+              <% results.forEach(function(r) { %>
+                  <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
+              <% }); %>
+            </ul>
+            <div class="tokimon-box">
+              <img class="tokimon-pic" src="something.png" alt="P">
+              <p class="tokimon-index">#1</p>
+              <h3 class="tokimon-name">Pikachu</h3>
+              <ul class="element-list">
+                <li class="grass">Grass</li>
+                <li class="electric">Electric</li>
+                <li class="water">Water</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
