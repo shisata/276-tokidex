@@ -23,13 +23,12 @@
                  var list = [];
                  results.forEach(function(r) {
                    list.push(r);
-                   <%= r.id %>
                  });
                  console.log(list);
                   %>
 
                   <%list.forEach(function(r) { %>
-                      <li><%= r %></li>
+                      <li><%= r.id %></li>
                   <% }); %>
               </li>
               <% results.forEach(function(r) { %>
