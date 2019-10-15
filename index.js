@@ -13,12 +13,12 @@ express()
   .use(express.json())
   .use(express.urlencoded({extended:false}))
   .set('views', path.join(__dirname, 'views'))
-  .get('/', (req, res) => {
+  .get('/', async (req, res) => {
     try{
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM tokidex');
       const results = {'results': (result) ? result.rows : null};
-      res.render('/home', results);
+      res.render('home', results);
       client.release();
     } catch(err){
       console.error(err);
@@ -31,7 +31,7 @@ express()
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM tokidex');
-      const results = { 'results': (result) ? result.rows : null};
+      const results = {'results': (result) ? result.rows : null};
       res.render('pages/db', results);
       client.release();
     } catch (err) {
