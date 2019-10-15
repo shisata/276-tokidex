@@ -18,9 +18,7 @@ express()
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM tokidex');
       const results = {'results': (result) ? result.rows : null};
-      alertPage();
       res.render('home', results);
-      alertPage();
       client.release();
     } catch(err){
       console.error(err);
