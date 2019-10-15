@@ -1,4 +1,3 @@
-var tokiList = [];
 
 function alertPage(results){
   alert(results);
