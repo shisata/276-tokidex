@@ -1,7 +1,7 @@
 var tokiList = [];
 
-function alertPage(){
-  alert("alertPage")
+function alertPage(results){
+  alert(results);
 }
 
 function insertElement(array, element){
