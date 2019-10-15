@@ -21,7 +21,7 @@
             <ul>
               <script type="text/javascript">
                 alertPage("alert");
-              //  alertPage(results);
+                alertPage(results[0]);
               </script>
               <% results.forEach(function(r) { %>
                   <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
