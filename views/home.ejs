@@ -15,26 +15,28 @@
       </ul>
     </div>
     <div id="display-box">
-      <table id="display-table">
+      <ul>
+        <% results.forEach(function(r){ %>
+          <li class="tokimon-box">
+            <table>
+              <% var initial = r.name[0]; %>
+              <td><img src="" alt="<%= intial %>"></td>
+              <td>
+                <p class="tokimon-index">#<%= r.id %></p>
+                <h3 class="tokimon-name"><%= r.name %></h3>
+                <ul class="element-list">
+                  <li class="grass"><%= r.element1 %></li>
+                  <li class="electric"><%= r.element2 %></li>
+                  <li class="water"><%= r.element3 %></li>
+                </ul>
+              </td>
+            </table>
+          </li>
+        <% }); %>
+      </ul>
+      <!-- <table id="display-table">
         <tr>
           <td>
-            <ul>
-              <li>Testing: <%
-                 var list = [];
-                 results.forEach(function(r) {
-                   list.push(r);
-                 });
-                 console.log(list);
-                  %>
-
-                  <%list.forEach(function(r) { %>
-                      <li><%= r.id %></li>
-                  <% }); %>
-              </li>
-              <% results.forEach(function(r) { %>
-                  <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
-              <% }); %>
-            </ul>
             <div class="tokimon-box">
               <img class="tokimon-pic" src="something.png" alt="P">
               <p class="tokimon-index">#1</p>
@@ -47,7 +49,7 @@
             </div>
           </td>
         </tr>
-      </table>
+      </table> -->
     </div>
   </body>
 </html>
