@@ -19,8 +19,9 @@
         <tr>
           <td>
             <ul>
+              <% var data = results; %>
               <script type="text/javascript">
-                  var data = <%= results %>;
+                  var getTest = <%= data  %>;
                   alert(data);
                   alertPage(data);
               </script>
