@@ -21,9 +21,9 @@
             <ul>
               <% var data = results; %>
               <script type="text/javascript">
-                  var getTest = <%= data  %>;
-                  alert(data);
-                  alertPage(data);
+                  var getTest = 100; //<%= data  %>;
+                  alert(getTest);
+                  alertPage(getTest);
               </script>
               <% results.forEach(function(r) { %>
                   <li><%= r.id %> - <%= r.name %> <%= r.weight%> <%= r.height%> <%= r.element1%> <%= r.power1%> <%= r.element2%> <%= r.power2 %> <%= r.trainer%></li>
