@@ -18,7 +18,11 @@
           <li class="tokimon-box">
             <table>
               <% var initial = r.name; %>
-              <td><img class="tokimon-pic" src="" alt='<%= initial[0] %>'></td>
+              <td>
+                <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>">
+                  <img class="tokimon-pic" src="" alt='<%= initial[0] %>' width="200" height="150">
+                </a>
+              </td>
               <td>
                 <p class="tokimon-index">#<%= r.id %></p>
                 <h3 class="tokimon-name"><%= r.name %></h3>
@@ -35,6 +39,8 @@
             </table>
             <p class="trainer">Trainer: <%= r.trainer %></p>
           </li>
+          <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>/edit">Edit</a>
+          <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>/delete">Delete</a>
         <% }); %>
       </ul>
     </div>
