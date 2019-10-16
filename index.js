@@ -26,6 +26,8 @@ express()
     }
   })
   .get('/create', (req, res) => res.render('create'))
+  .get('/comparison', (req, res) => res.render('comparison'))
+
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
     try {
