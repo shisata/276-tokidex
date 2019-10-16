@@ -20,14 +20,14 @@
           <li class="tokimon-box">
             <table>
               <% var initial = r.name; %>
-              <td><img src="" alt='<%= initial %>'></td>
+              <td><img src="" alt='<%= initial[0] %>'></td>
               <td>
                 <p class="tokimon-index">#<%= r.id %></p>
                 <h3 class="tokimon-name"><%= r.name %></h3>
                 <ul class="element-list">
-                  <li class="grass"><%= r.element1 %></li>
-                  <li class="electric"><%= r.element2 %></li>
-                  <li class="water"><%= r.element3 %></li>
+                  <li class='<%= r.element1 %>'><%= r.element1 %></li>
+                  <li class='<%= r.element2 %>'><%= r.element2 %></li>
+                  <li class='<%= r.element3 %>'><%= r.element3 %></li>
                 </ul>
               </td>
             </table>
