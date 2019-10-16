@@ -66,17 +66,17 @@ express()
       var total = parseFloat(power1) + parseFloat(power2) + parseFloat(power3);
 
       const result = await client.query("UPDATE tokidex SET " +
-      "name=" + name +
-      ",weight=" + weight +
-      ",height=" + height +
-      ",element1=" + element1 +
-      ",power1=" + power1 +
-      ",element2=" + element1 +
-      ",power2=" + power1 +
-      ",element3=" + element1 +
-      ",power3=" + power1 +
-      ",trainer=" + trainer +
-      ",total=" + total +
+      "name = " + name +
+      ", weight = " + weight +
+      ", height = " + height +
+      ", element1 = " + element1 +
+      ", power1 = " + power1 +
+      ", element2 = " + element2 +
+      ", power2 = " + power2 +
+      ", element3 = " + element3 +
+      ", power3 = " + power3 +
+      ", trainer = " + trainer +
+      ", total = " + total +
        " WHERE id=" + list.id + ";");
 
       const results = {'results': (result) ? result.rows : null};
