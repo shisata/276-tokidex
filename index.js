@@ -82,6 +82,8 @@ express()
       // total);
 
       const result = await client.query("SELECT * FROM tokidex");
+      const results = {'results': (result) ? result.rows : null};
+      res.render('comparison', results);
       client.release();
     } catch(err){
       console.error(err);
