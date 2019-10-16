@@ -18,11 +18,11 @@
           <li class="tokimon-box">
             <table>
               <% var initial = r.name; %>
-              
-              <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>">
-              <td><img class="tokimon-pic" src="" alt='<%= initial[0] %>'></td>
-              </a>
-
+              <td>
+                <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>">
+                  <img class="tokimon-pic" src="" alt='<%= initial[0] %>' width="200" height="150">
+                </a>
+              </td>
               <td>
                 <p class="tokimon-index">#<%= r.id %></p>
                 <h3 class="tokimon-name"><%= r.name %></h3>
