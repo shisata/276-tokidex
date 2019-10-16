@@ -18,9 +18,11 @@
           <li class="tokimon-box">
             <table>
               <% var initial = r.name; %>
-              <form action='https://tokidex.herokuapp.com/tokidex/<%= r.id %>' method="get">
-                <td><img class="tokimon-pic" src="" alt='<%= initial[0] %>'></td>
-              </form>
+              
+              <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>">
+              <td><img class="tokimon-pic" src="" alt='<%= initial[0] %>'></td>
+              </a>
+
               <td>
                 <p class="tokimon-index">#<%= r.id %></p>
                 <h3 class="tokimon-name"><%= r.name %></h3>
