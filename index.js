@@ -39,8 +39,8 @@ express()
   })
   .get('tokidex/delete/:id', async (req, res) => {
     try{
-      //const client = await pool.connect();
-      // const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
+      const client = await pool.connect();
+     const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
       res.render('home');
       client.release();
     } catch(err){
@@ -51,7 +51,7 @@ express()
   .get('tokidex/edit/:id', async (req, res) => {
     try{
       const client = await pool.connect();
-      // const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
+      const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
       res.render('home');
       client.release();
     } catch(err){
