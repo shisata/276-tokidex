@@ -53,7 +53,7 @@ express()
   .post('/create', async (req, res) => {
     try{
       const client = await pool.connect();
-      var list = req.params;
+      var list = req.body;
       var name = list.name;
       var weight = list.weight;
       var height = list.height;
