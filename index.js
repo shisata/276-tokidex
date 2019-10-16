@@ -79,9 +79,9 @@ express()
       "', total = " + total +
        " WHERE id=" + list.id + ";");
 
-      const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
+      const result = await client.query('SELECT * FROM tokidex');
       const results = {'results': (result) ? result.rows : null};
-      res.render('edit', results);
+      res.render('home', results);
       client.release();
     } catch(err){
       console.error(err);
