@@ -51,7 +51,8 @@ express()
   .get('/delete/:id', async (req, res) => {
     try{
       const client = await pool.connect();
-     const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
+      console.log(req.params.id);
+      const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
       res.render('home');
       client.release();
     } catch(err){
