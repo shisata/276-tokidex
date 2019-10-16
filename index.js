@@ -13,19 +13,19 @@ express()
   .use(express.json())
   .use(express.urlencoded({extended:false}))
   .set('views', path.join(__dirname, 'views'))
-  .get('/tokidex', async (req, res) => {
+  .get('/', async (req, res) => {
     try{
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM tokidex');
       const results = {'results': (result) ? result.rows : null};
-      res.render('tokidex', results);
+      res.render('home', results);
       client.release();
     } catch(err){
       console.error(err);
       res.send("Error " + err);
     }
   })
-  .get('tokidex/:id', async (req, res) =>{
+  .get('/:id', async (req, res) =>{
     try{
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
