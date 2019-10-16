@@ -34,8 +34,8 @@
               </td>
             </table>
           </li>
-          <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>/edit">Edit</a>
-          <a href="https://tokidex.herokuapp.com/tokidex/<%= r.id %>/delete">Delete</a>
+          <a href="https://tokidex.herokuapp.com/tokidex/edit/<%= r.id %>" method="get">Edit</a>
+          <a href="https://tokidex.herokuapp.com/tokidex/delete/<%= r.id %>" method="DELETE">Delete</a>
         <% }); %>
       </ul>
     </div>
