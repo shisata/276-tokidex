@@ -41,7 +41,7 @@ express()
     try{
       const client = await pool.connect();
       //const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
-      // res.render('home');
+      res.render('edit');
       client.release();
     } catch(err){
       console.error(err);

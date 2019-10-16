@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Tokimon</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css">
+    <div class="side-nav">
+      <a href="https://tokidex.herokuapp.com">Tokidex</a>
+      <a href="https://tokidex.herokuapp.com/create">Creation</a>
+      <a href="https://tokidex.herokuapp.com/comparison">Comparison</a>
+    </div>
+    <div class="display-box">
+      <h1 class="logo">Edit Tokimon</h1>
+      <form class="creation" action="https://tokidex.herokuapp.com/create" method="post">
+        <input type="text" name="name" placeholder="Name" value='<%= r.name %>' required> <br>
+        <input type="number" min="0" name="weight" placeholder="Weight" value='<%= r.weight %>' required> <br>
+        <input type="number" min="0" name="height" placeholder="Height" value='<%= r.height %>' required> <br>
+
+        <select name="element1" placeholder="Element">
+          <option value='<%= r.element1 %>'><%= r.element1 %></option>
+          <option value="">None</option>
+          <option value="grass">Grass</option>
+          <option value="electric">Electri</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+          <option value="fight">Fight</option>
+          <option value="fly">Fly</option>
+          <option value="ice">Ice</option>
+        </select>
+        <input type="number" min="0" name="power1" placeholder="Power" value='<%= r.power1 %>'> <br>
+
+        <select name="element2" placeholder="Element">
+          <option value='<%= r.element2 %>'><%= r.element2 %></option>
+          <option value="">None</option>
+          <option value="grass">Grass</option>
+          <option value="electric">Electri</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+          <option value="fight">Fight</option>
+          <option value="fly">Fly</option>
+          <option value="ice">Ice</option>
+        </select>
+        <input type="number" min="0" name="power1" placeholder="Power" value='<%= r.power2 %>'> <br>
+
+        <select name="element3" placeholder="Element">
+          <option value='<%= r.element3 %>'><%= r.element3 %></option>
+          <option value="">None</option>
+          <option value="grass">Grass</option>
+          <option value="electric">Electri</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+          <option value="fight">Fight</option>
+          <option value="fly">Fly</option>
+          <option value="ice">Ice</option>
+        </select>
+        <input type="number" min="0" name="power1" placeholder="Power" value='<%= r.power3 %>'> <br>
+        <input type="text" name="trainer" placeholder="Trainer" value='<%= r.trainer %>'> <br>
+        <p>Total: <%= r.total %></p>
+        <input type="submit" value="Submit"> <br>
+      </form>
+    </div>
+  </body>
+</html>
