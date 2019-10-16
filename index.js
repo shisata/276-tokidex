@@ -37,7 +37,7 @@ express()
       res.send("Error " + err);
     }
   })
-  .get('edit/:id', async (req, res) => {
+  .get('/edit/:id', async (req, res) => {
     try{
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
@@ -48,7 +48,7 @@ express()
       res.send("Error " + err);
     }
   })
-  .get('delete/:id', async (req, res) => {
+  .get('/delete/:id', async (req, res) => {
     try{
       const client = await pool.connect();
      const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
