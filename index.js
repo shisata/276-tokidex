@@ -25,7 +25,7 @@ express()
       res.send("Error " + err);
     }
   })
-  .get('/detail', async (req, res) =>{
+  .get('/id', async (req, res) =>{
     try{
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM tokidex');
