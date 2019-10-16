@@ -25,7 +25,14 @@ express()
       res.send("Error " + err);
     }
   })
-  .post('/', async (req, res) => {
+  .get('/:id', (req, res) =>{
+    console.log(req.params.id);
+    var const result = await client.query('SELECT * FROM tokidex WHERE id=${req.param.id}');
+    const results = {'results': (result) ? result.rows : null};
+    res.render('detail', results);
+    client.release();
+  })
+  .post('/create', async (req, res) => {
     try{
       const client = await pool.connect();
       // const result = await client.query('INSERT INTO ' +
