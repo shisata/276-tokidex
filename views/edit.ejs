@@ -14,7 +14,7 @@
     <div class="display-box">
       <% results.forEach(function(r) { %>
       <h1 class="logo">Edit Tokimon</h1>
-      <form class="creation" action="https://tokidex.herokuapp.com/edit/<%= r.id%>" method="post">        
+      <form class="creation" action="https://tokidex.herokuapp.com/edit/<%= r.id%>" method="post">
         <input type="text" name="name" placeholder="Name" value='<%= r.name %>' required> <br>
         <input type="number" min="0" name="weight" placeholder="Weight" value='<%= r.weight %>' required> <br>
         <input type="number" min="0" name="height" placeholder="Height" value='<%= r.height %>' required> <br>
@@ -23,7 +23,7 @@
           <option value='<%= r.element1 %>'><%= r.element1 %></option>
           <option value="">None</option>
           <option value="grass">Grass</option>
-          <option value="electric">Electri</option>
+          <option value="electric">Electric</option>
           <option value="fire">Fire</option>
           <option value="water">Water</option>
           <option value="fight">Fight</option>
@@ -43,7 +43,7 @@
           <option value="fly">Fly</option>
           <option value="ice">Ice</option>
         </select>
-        <input type="number" min="0" name="power1" placeholder="Power" value='<%= r.power2 %>'> <br>
+        <input type="number" min="0" name="power2" placeholder="Power" value='<%= r.power2 %>'> <br>
 
         <select name="element3" placeholder="Element">
           <option value='<%= r.element3 %>'><%= r.element3 %></option>
@@ -56,7 +56,7 @@
           <option value="fly">Fly</option>
           <option value="ice">Ice</option>
         </select>
-        <input type="number" min="0" name="power1" placeholder="Power" value='<%= r.power3 %>'> <br>
+        <input type="number" min="0" name="power3" placeholder="Power" value='<%= r.power3 %>'> <br>
         <input type="text" name="trainer" placeholder="Trainer" value='<%= r.trainer %>'> <br>
         <p>Total: <%= r.total %></p>
         <input type="submit" value="Submit"> <br>
