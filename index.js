@@ -49,7 +49,7 @@ express()
       res.send("Error " + err);
     }
   })
-  .get('/delete/:id', async (req, res) => {
+  .delete('/delete/:id', async (req, res) => {
     try{
       const client = await pool.connect();
       const result = await client.query('DELETE FROM tokidex WHERE id=' + req.body.id);
