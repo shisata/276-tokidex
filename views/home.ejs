@@ -34,14 +34,14 @@
               </td>
             </table>
           </li>
-          <form class="" action="https://tokidex.herokuapp.com/tokidex/edit/<%= r.id %>" method="get">
+          <!-- <form class="" action="https://tokidex.herokuapp.com/tokidex/edit/<%= r.id %>" method="get">
             <input type="submit" name="edit" value="Edit">
           </form>
           <form class="" action="https://tokidex.herokuapp.com/tokidex/delete/<%= r.id %>" method="DELETE">
             <input type="submit" name="delete" value="Delete">
-          </form>
-          <!-- <a href="https://tokidex.herokuapp.com/tokidex/edit/<%= r.id %>" method="get">Edit</a>
-          <a href="https://tokidex.herokuapp.com/tokidex/delete/<%= r.id %>" method="DELETE">Delete</a> -->
+          </form> -->
+          <button href="https://tokidex.herokuapp.com/tokidex/edit/<%= r.id %>">Edit</a>
+          <button href="https://tokidex.herokuapp.com/tokidex/delete/<%= r.id %>">Delete</a>
         <% }); %>
       </ul>
     </div>
