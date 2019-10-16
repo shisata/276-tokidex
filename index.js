@@ -28,7 +28,7 @@ express()
   .get('/:id', (req, res) =>{
     try{
       console.log(req.params.id);
-      var const result = await client.query('SELECT * FROM tokidex WHERE id=${req.param.id}');
+      var const result = `SELECT * FROM tokidex WHERE id=${req.param.id}`;
       const results = {'results': (result) ? result.rows : null};
       res.render('detail', results);
       client.release();
