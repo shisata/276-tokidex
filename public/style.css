@@ -54,6 +54,8 @@ ul{
   color: white;
   font-family: monospace, sans-serif;
   font-size: 50px;
+  width: 70px;
+  height: 100px;
 }
 
 .tokimon-box:hover{
