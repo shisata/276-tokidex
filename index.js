@@ -79,7 +79,7 @@ express()
       element3 + ', ' +
       power3 + ', ' +
       trainer + ', ' +
-      total);
+      total + ')' );
 
       // const result = await client.query("SELECT * FROM tokidex");
       // const results = {'results': (result) ? result.rows : null};
