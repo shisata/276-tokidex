@@ -30,6 +30,12 @@ ul{
   color: #f1f1f1;
 }
 
+.display-box{
+  margin-left: 160px;
+  font-size: 28px;
+  padding: 0px 10px;
+}
+
 .tokimon-pic{
   width: 200px;
   height: 400px;
