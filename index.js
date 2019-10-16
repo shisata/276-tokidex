@@ -28,7 +28,7 @@ express()
   .get('/:id', (req, res) =>{
     try{
       const client = await pool.connect();
-      const result = await client.query(`SELECT * FROM tokidex WHERE id=5`);
+      const result = await client.query('SELECT * FROM tokidex');
       const results = {'results': (result) ? result.rows : null};
       res.render('detail', results);
       client.release();
