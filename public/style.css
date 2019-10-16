@@ -76,7 +76,7 @@ ul{
   float:left;
 }
 
-.grass, .electric, .fire, .water, .fighting{
+.grass, .electric, .fire, .water, .fight, .fly, .ice{
   font-family:monospace;
   padding: 5px;
   color: black;
@@ -89,13 +89,28 @@ ul{
 
 .electric{
   color: black;
-  background-color: yellow;
+  background-color: #eef33f;
 }
 
 .fire{
-  background-color: red;
+  color: black;
+  background-color: #fb2929;
 }
 
 .water{
-  background-color: blue;
+  color: black;
+  background-color: #1740e7;
+}
+
+.fight{
+  background-color: #ab470a;
+}
+
+.fly{
+  background-color: #768db4;
+}
+
+.ice{
+  color: black;
+  background-color: #1efafe;
 }
