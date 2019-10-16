@@ -21,6 +21,7 @@ ul{
 .side-nav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
+  font-family: monospace, sans-serif;
   font-size: 25px;
   color: #818181;
   display: block;
