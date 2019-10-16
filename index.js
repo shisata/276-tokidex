@@ -66,24 +66,24 @@ express()
       var trainer = list.trainer;
       var total = list.total;
 
-      // const result = await client.query('INSERT INTO ' +
-      // 'tokidex (name, weight, height, element1, power1, element2, power2, element3, power3, trainer) ' +
-      // 'VALUES ( ' +
-      // name + ', ' +
-      // weight + ', ' +
-      // height + ', ' +
-      // element1 + ', ' +
-      // power1 + ', ' +
-      // element2 + ', ' +
-      // power2 + ', ' +
-      // element3 + ', ' +
-      // power3 + ', ' +
-      // trainer + ', ' +
-      // total);
+      const result = await client.query('INSERT INTO ' +
+      'tokidex (name, weight, height, element1, power1, element2, power2, element3, power3, trainer) ' +
+      'VALUES ( ' +
+      name + ', ' +
+      weight + ', ' +
+      height + ', ' +
+      element1 + ', ' +
+      power1 + ', ' +
+      element2 + ', ' +
+      power2 + ', ' +
+      element3 + ', ' +
+      power3 + ', ' +
+      trainer + ', ' +
+      total);
 
-      const result = await client.query("SELECT * FROM tokidex");
-      const results = {'results': (result) ? result.rows : null};
-      res.render('comparison', results);
+      // const result = await client.query("SELECT * FROM tokidex");
+      // const results = {'results': (result) ? result.rows : null};
+      res.render('comparison', result);
       client.release();
     } catch(err){
       console.error(err);
