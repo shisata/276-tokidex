@@ -78,7 +78,9 @@ express()
       element3 + ', ' +
       power3 + ', ' +
       trainer + ', ' +
-      total + ')' );
+      total + ');' );
+
+        // const result = await client.query("insert into tokidex (name, weight, height, element1, power1, element2, power2, element3, power3, trainer, total) values ('Raiku', 50000, 321321, 'fight', 9000, 'water', 521, 'fire', 521, 'POKECHU', 99999);");
 
       res.render('create');
       client.release();
