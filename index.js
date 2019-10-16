@@ -64,11 +64,10 @@ express()
       var element3 = list.element3;
       var power3 = list.power3;
       var trainer = list.trainer;
-      var total = list.total;
+      var total = 0;
 
-      const result = await client.query('INSERT INTO ' +
-      'tokidex (name, weight, height, element1, power1, element2, power2, element3, power3, trainer) ' +
-      'VALUES ( ' +
+      const result = await client.query('INSERT INTO tokidex ' +
+      '(name, weight, height, element1, power1, element2, power2, element3, power3, trainer, total) VALUES ( ' +
       name + ', ' +
       weight + ', ' +
       height + ', ' +
