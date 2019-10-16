@@ -80,9 +80,18 @@ express()
       trainer + "', " +
       total + ");" );
 
-        // const result = await client.query("insert into tokidex (name, weight, height, element1, power1, element2, power2, element3, power3, trainer, total) values ('Raiku', 50000, 321321, 'fight', 9000, 'water', 521, 'fire', 521, 'POKECHU', 99999);");
-
       res.render('create');
+      client.release();
+    } catch(err){
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+  .delete('tokidex/delete/:id'async (req, res) =>{
+    try{
+      const client = await pool.connect();
+      const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
+      res.render('home');
       client.release();
     } catch(err){
       console.error(err);
