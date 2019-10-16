@@ -52,7 +52,7 @@ express()
     try{
       const client = await pool.connect();
       // const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
-      // res.render('home');
+      res.render('home');
       client.release();
     } catch(err){
       console.error(err);
