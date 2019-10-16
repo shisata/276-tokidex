@@ -30,6 +30,11 @@ ul{
   color: #f1f1f1;
 }
 
+.logo{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
 .display-box{
   margin-left: 160px;
   font-size: 28px;
