@@ -65,7 +65,7 @@ express()
       var trainer = list.trainer;
       var total = parseFloat(power1) + parseFloat(power2) + parseFloat(power3);
 
-      const result = await client.query("UPDATE tokidex SET " +
+      const edit = await client.query("UPDATE tokidex SET " +
       "name = '" + name +
       "', weight = " + weight +
       ", height = " + height +
@@ -79,6 +79,7 @@ express()
       "', total = " + total +
        " WHERE id=" + list.id + ";");
 
+      const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
       const results = {'results': (result) ? result.rows : null};
       res.render('edit', results);
       client.release();
