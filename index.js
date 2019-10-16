@@ -53,9 +53,34 @@ express()
   .post('/create', async (req, res) => {
     try{
       const client = await pool.connect();
+      var list = req.params;
+      var name = list.name;
+      var weight = list.weight;
+      var height = list.height;
+      var element1 = list.element1;
+      var power1 = list.power1;
+      var element2 = list.element2;
+      var power2 = list.power2;
+      var element3 = list.element3;
+      var power3 = list.power3;
+      var trainer = list.trainer;
+      var total = list.total;
+
       // const result = await client.query('INSERT INTO ' +
       // 'tokidex (name, weight, height, element1, power1, element2, power2, element3, power3, trainer) ' +
-      // 'VALUES ( ${req.param.name}, ${req.param.weight}, ${req.param.height}, ${req.param.element1}, ${req.param.power1}, ${req.param.element2}, ${req.param.power2}, ${req.param.element3}, ${req.param,power3}, ${req.param.trainer}, ${req.param.total});';
+      // 'VALUES ( ' +
+      // name + ', ' +
+      // weight + ', ' +
+      // height + ', ' +
+      // element1 + ', ' +
+      // power1 + ', ' +
+      // element2 + ', ' +
+      // power2 + ', ' +
+      // element3 + ', ' +
+      // power3 + ', ' +
+      // trainer + ', ' +
+      // total);
+
       const result = await client.query("SELECT * FROM tokidex");
       client.release();
     } catch(err){
