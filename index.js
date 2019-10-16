@@ -37,7 +37,19 @@ express()
       res.send("Error " + err);
     }
   })
-  .get('/edit/:id', async (req, res) => {
+  .get('/edit/:id', async (req, res) =>{
+    try{
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
+      const results = {'results': (result) ? result.rows : null};
+      res.render('edit', results);
+      client.release();
+    } catch(err){
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+  .post('/edit/:id', async (req, res) => {
     try{
       const client = await pool.connect();
       var list = req.body;
@@ -66,7 +78,7 @@ express()
       ",trainer=" + trainer +
       ",total=" + total +
        " WHERE id=" + list.id + ";");
-       
+
       const results = {'results': (result) ? result.rows : null};
       res.render('edit', results);
       client.release();
