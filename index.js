@@ -52,7 +52,7 @@ express()
   .get('/delete/:id', async (req, res) => {
     try{
       const client = await pool.connect();
-      const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
+      var result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
       result = await client.query('SELECT * FROM tokidex');
       const results = {'results': (result) ? result.rows : null};
       res.render('home', results);
@@ -89,7 +89,7 @@ express()
       var element3 = list.element3;
       var power3 = list.power3;
       var trainer = list.trainer;
-      var total = 0;
+      var total = parseInt(power1 + power2 + power3);
 
       const result = await client.query("INSERT INTO tokidex " +
       "(name, weight, height, element1, power1, element2, power2, element3, power3, trainer, total) VALUES ( '" +
