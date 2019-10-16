@@ -25,7 +25,7 @@ express()
       res.send("Error " + err);
     }
   })
-
+  .get('/create', (req, res) => res.render('create'))
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/db', async (req, res) => {
     try {
