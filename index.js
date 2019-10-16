@@ -48,6 +48,17 @@ express()
       res.send("Error " + err);
     }
   })
+  .get('tokidex/edit/:id', async (req, res) => {
+    try{
+      const client = await pool.connect();
+      // const result = await client.query('DELETE FROM tokidex WHERE id=' + req.params.id);
+      res.render('home');
+      client.release();
+    } catch(err){
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
   .get('/create', (req, res) => res.render('create'))
   .get('/comparison', async (req, res) => {
     try{
