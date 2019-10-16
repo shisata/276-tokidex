@@ -116,3 +116,14 @@ ul{
   color: black;
   background-color: #1efafe;
 }
+
+.total{
+  font-family: arial;
+  font-weight: bold;
+  color: white;
+  background-color: #232323;
+}
+
+.trainer{
+  font-weight: bold;
+}

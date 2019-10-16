@@ -24,11 +24,16 @@
                 <h3 class="tokimon-name"><%= r.name %></h3>
                 <ul class="element-list">
                   <li class='<%= r.element1 %>'><%= r.element1 %></li>
+                  <li class='<%= r.element1 %>'><%= r.power1 %></li><br>
                   <li class='<%= r.element2 %>'><%= r.element2 %></li>
+                  <li class='<%= r.element1 %>'><%= r.power2 %></li><br>
                   <li class='<%= r.element3 %>'><%= r.element3 %></li>
+                  <li class='<%= r.element1 %>'><%= r.power3 %></li><br>
+                  <li class='total'><%= r.total %></li><br>
                 </ul>
               </td>
             </table>
+            <p class="trainer">Trainer: <%= r.trainer %></p>
           </li>
         <% }); %>
       </ul>
