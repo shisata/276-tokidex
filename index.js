@@ -40,7 +40,33 @@ express()
   .get('/edit/:id', async (req, res) => {
     try{
       const client = await pool.connect();
-      const result = await client.query('SELECT * FROM tokidex WHERE id=' + req.params.id);
+      var list = req.body;
+      var name = list.name;
+      var weight = list.weight;
+      var height = list.height;
+      var element1 = list.element1;
+      var power1 = list.power1;
+      var element2 = list.element2;
+      var power2 = list.power2;
+      var element3 = list.element3;
+      var power3 = list.power3;
+      var trainer = list.trainer;
+      var total = parseFloat(power1) + parseFloat(power2) + parseFloat(power3);
+
+      const result = await client.query("UPDATE tokidex SET " +
+      "name=" + name +
+      ",weight=" + weight +
+      ",height=" + height +
+      ",element1=" + element1 +
+      ",power1=" + power1 +
+      ",element2=" + element1 +
+      ",power2=" + power1 +
+      ",element3=" + element1 +
+      ",power3=" + power1 +
+      ",trainer=" + trainer +
+      ",total=" + total +
+       " WHERE id=" + list.id + ";");
+       
       const results = {'results': (result) ? result.rows : null};
       res.render('edit', results);
       client.release();
