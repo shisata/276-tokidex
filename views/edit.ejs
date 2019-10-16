@@ -12,9 +12,9 @@
       <a href="https://tokidex.herokuapp.com/comparison">Comparison</a>
     </div>
     <div class="display-box">
+      <% results.forEach(function(r) { %>
       <h1 class="logo">Edit Tokimon</h1>
-      <form class="creation" action="https://tokidex.herokuapp.com/edit/<%= r.id%>" method="post">
-        <% results.forEach(function(r) { %>
+      <form class="creation" action="https://tokidex.herokuapp.com/edit/<%= r.id%>" method="post">        
         <input type="text" name="name" placeholder="Name" value='<%= r.name %>' required> <br>
         <input type="number" min="0" name="weight" placeholder="Weight" value='<%= r.weight %>' required> <br>
         <input type="number" min="0" name="height" placeholder="Height" value='<%= r.height %>' required> <br>
